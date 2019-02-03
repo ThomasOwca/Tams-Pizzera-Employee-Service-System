@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="Tams__Pizzeria.PastOrders"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Tams__Pizzeria"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" Width="821.388">
+    <Grid x:Name="PastOrdersControl" Margin="50,-55,-145,-80" Background="#FFED3030" d:IsLocked="True">
+        <DataGrid x:Name="dataGridPastOrders" HorizontalAlignment="Left" Height="470" Margin="35,100,0,0" VerticalAlignment="Top" Width="829" AutoGenerateColumns="False" IsReadOnly="True" CanUserSortColumns="True" d:IsLocked="True"/>
+        <Label Content="Past Orders" HorizontalAlignment="Left" Height="55" Margin="355,20,0,0" VerticalAlignment="Top" Width="225" FontSize="36" Foreground="White" FontFamily="Segoe UI Black" d:IsLocked="True"/>
+    </Grid>
+</UserControl>

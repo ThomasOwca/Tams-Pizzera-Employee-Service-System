@@ -1,0 +1,15 @@
+﻿<Window x:Class="Tams__Pizzeria.SuccessScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tams__Pizzeria"
+        mc:Ignorable="d"
+        Title="Tams' Pizzeria Employee Service System" Height="438.745" Width="846.098" WindowStartupLocation="CenterScreen" Closed="Window_Closed" ResizeMode="CanMinimize" WindowStyle="None" Icon="LogIn.jpg">
+    <Grid Background="#FFED3030">
+        <Image HorizontalAlignment="Left" Height="443" Margin="-3.291,-3.4,0,-0.541" VerticalAlignment="Top" Width="499.232" Source="SuccessScreen.jpg" StretchDirection="DownOnly" Stretch="Fill"/>
+        <Label Content="Welcome!" HorizontalAlignment="Left" Height="62.744" Margin="581.023,119.256,0,0" VerticalAlignment="Top" Width="188.232" FontSize="36" FontWeight="ExtraBold" Foreground="White"/>
+        <Label Content="Employee!" HorizontalAlignment="Left" Height="78.11" Margin="542.608,170.475,0,0" VerticalAlignment="Top" Width="259.939" FontSize="48" FontWeight="ExtraBold" Foreground="White"/>
+        <Label Content="Tams' Pizzeria Est. 2018" HorizontalAlignment="Left" Height="47" Margin="530,290,0,0" VerticalAlignment="Top" Width="285" FontSize="24" FontWeight="Bold" Foreground="#7F221111" FontStyle="Italic"/>
+    </Grid>
+</Window>

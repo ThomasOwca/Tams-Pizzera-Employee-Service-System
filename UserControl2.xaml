@@ -1,0 +1,155 @@
+﻿<UserControl x:Name="CreateOrderUserControl" x:Class="Tams__Pizzeria.UserControl2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Tams__Pizzeria"
+             mc:Ignorable="d" d:DesignWidth="835" Height="453.4">
+    <UserControl.Resources>
+        <ControlTemplate x:Key="SubmitOrderBtnTemplateCopy" TargetType="{x:Type ButtonBase}">
+            <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="Button.IsDefaulted" Value="True">
+                    <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" TargetName="border" Value="#000000"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="white"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" TargetName="border" Value="#000000"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="white"/>
+                </Trigger>
+                <Trigger Property="ToggleButton.IsChecked" Value="True">
+                    <Setter Property="Background" TargetName="border" Value="#FFBCDDEE"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="#FF245A83"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" TargetName="border" Value="#FFF4F4F4"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="white"/>
+                    <Setter Property="Foreground" Value="white"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="ResetButtonTemplateCopy" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="#FFDDDDDD"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="black"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="white"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="black"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="white"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="#FFED3030" Height="453" VerticalAlignment="Top" Margin="0,0,0.2,0">
+        <ComboBox x:Name="comboBoxCrust" HorizontalAlignment="Left" Height="40" Margin="260,18,0,0" VerticalAlignment="Top" Width="225" FontSize="20" FontFamily="Segoe UI Black" VerticalContentAlignment="Center" SelectionChanged="ComboBoxCrust_SelectionChanged" SelectedValuePath="Content">
+            <ComboBoxItem Content="Regular"/>
+            <ComboBoxItem Content="Deep-Dish"/>
+            <ComboBoxItem Content="Thin-Crust"/>
+        </ComboBox>
+        <ComboBox x:Name="comboBoxTopping1" HorizontalAlignment="Left" Height="40" Margin="260,133,0,0" VerticalAlignment="Top" Width="225" VerticalContentAlignment="Center" FontSize="20" FontFamily="Segoe UI Black" SelectedIndex="-1" SelectionChanged="ComboBoxTopping1_SelectionChanged" IsEnabled="False" SelectedValuePath="Content">
+            <ComboBoxItem Content="None"/>
+            <ComboBoxItem Content="Extra Cheese"/>
+            <ComboBoxItem Content="Pepperoni"/>
+            <ComboBoxItem Content="Sausage"/>
+            <ComboBoxItem Content="Mushrooms"/>
+            <ComboBoxItem Content="Peppers"/>
+        </ComboBox>
+        <ComboBox x:Name="comboBoxTopping2" HorizontalAlignment="Left" Height="40" Margin="260,188,0,0" VerticalAlignment="Top" Width="225" VerticalContentAlignment="Center" FontSize="20" FontFamily="Segoe UI Black" SelectedIndex="-1" IsEnabled="False" SelectedValuePath="Content" SelectionChanged="ComboBoxTopping2_SelectionChanged">
+            <ComboBoxItem Content="None"/>
+            <ComboBoxItem Content="Pepperoni"/>
+            <ComboBoxItem Content="Sausage"/>
+            <ComboBoxItem Content="Mushrooms"/>
+            <ComboBoxItem Content="Peppers"/>
+        </ComboBox>
+        <ComboBox x:Name="comboBoxTopping3" HorizontalAlignment="Left" Height="40" Margin="260,243,0,0" VerticalAlignment="Top" Width="225" VerticalContentAlignment="Center" FontFamily="Segoe UI Black" FontSize="20" SelectedIndex="-1" IsEnabled="False" SelectedValuePath="Content" SelectionChanged="ComboBoxTopping3_SelectionChanged">
+            <ComboBoxItem Content="None"/>
+            <ComboBoxItem Content="Pepperoni"/>
+            <ComboBoxItem Content="Sausage"/>
+            <ComboBoxItem Content="Mushrooms"/>
+            <ComboBoxItem Content="Peppers"/>
+        </ComboBox>
+        <Label Content="Choose Crust:" HorizontalAlignment="Left" Height="45" Margin="10,13,0,0" VerticalAlignment="Top" Width="190" FontFamily="Segoe UI Black" Foreground="White" FontSize="24"/>
+        <Label Content="Choose Topping 1:" HorizontalAlignment="Left" Height="45" Margin="10,128,0,0" VerticalAlignment="Top" Width="230" FontFamily="Segoe UI Black" Foreground="White" FontSize="24"/>
+        <Label Content="Choose Topping 2:" HorizontalAlignment="Left" Height="45" Margin="15,183,0,0" VerticalAlignment="Top" Width="230" FontFamily="Segoe UI Black" Foreground="White" FontSize="24"/>
+        <Label Content="Choose Topping 3:" HorizontalAlignment="Left" Height="45" Margin="15,238,0,0" VerticalAlignment="Top" Width="230" FontFamily="Segoe UI Black" Foreground="White" FontSize="24"/>
+        <Label Content="Enter First Name:" HorizontalAlignment="Left" Height="45" Margin="20,293,0,0" VerticalAlignment="Top" Width="230" FontFamily="Segoe UI Black" Foreground="White" FontSize="24"/>
+        <TextBox x:Name="txtBoxFirstName" HorizontalAlignment="Left" Height="40" Margin="260,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="225" FontSize="20" VerticalContentAlignment="Center" IsEnabled="False" FontFamily="Segoe UI Black" Background="White" BorderBrush="White" Foreground="Black" BorderThickness="1" Padding="2,0,0,0"/>
+        <Label Content="*Includes pizza sauce and cheese*" HorizontalAlignment="Left" Height="25" Margin="30,48,0,0" VerticalAlignment="Top" Width="210" FontFamily="Segoe UI Black"/>
+        <Button Name="button" Content="Submit Order" HorizontalAlignment="Left" Height="60" Margin="20,361,0,0" VerticalAlignment="Top" Width="465" FontSize="20" Background="#FFFA3D3D" Click="SubmitOrderButton_Click" Foreground="White" BorderBrush="White" Template="{DynamicResource SubmitOrderBtnTemplateCopy}" />
+        <Rectangle HorizontalAlignment="Left" Height="327" Margin="535,13,0,0" Stroke="White" VerticalAlignment="Top" Width="290" Fill="#FFFA3D3D"/>
+        <Label x:Name="labelCrust" Content="Crust/Size" HorizontalAlignment="Left" Height="30" Margin="545,23,0,0" VerticalAlignment="Top" Width="197" VerticalContentAlignment="Center" FontSize="14" Foreground="White"/>
+        <Label x:Name="labelCrustCost" Content="0.00" HorizontalAlignment="Left" Height="30" Margin="742,23,0,0" VerticalAlignment="Top" Width="77" VerticalContentAlignment="Center" FontSize="14" Foreground="White"/>
+        <Label x:Name="labelTopping1" Content="" HorizontalAlignment="Left" Height="30" Margin="545,53,0,0" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" FontSize="14" Foreground="White"/>
+        <Label x:Name="labelTopping1Cost" Content="0.00" HorizontalAlignment="Left" Height="30" Margin="742,53,0,0" VerticalAlignment="Top" Width="77" VerticalContentAlignment="Center" FontSize="14" Foreground="White"/>
+        <Label x:Name="labelTopping2" Content="" HorizontalAlignment="Left" Height="30" Margin="545,83,0,0" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" FontSize="14" Foreground="White"/>
+        <Label x:Name="labelTopping2Cost" Content="0.00" HorizontalAlignment="Left" Height="30" Margin="742,83,0,0" VerticalAlignment="Top" Width="77" VerticalContentAlignment="Center" FontSize="14" Foreground="White"/>
+        <Label x:Name="labelTopping3" Content="" HorizontalAlignment="Left" Height="30" Margin="545,113,0,0" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center" FontSize="14" Foreground="White"/>
+        <Label x:Name="labelTopping3Cost" Content="0.00" HorizontalAlignment="Left" Height="30" Margin="742,113,0,0" VerticalAlignment="Top" Width="77" VerticalContentAlignment="Center" FontSize="14" Foreground="White"/>
+        <Label x:Name="labelSubTotal" Content="Sub Total" HorizontalAlignment="Left" Height="30" Margin="545,143,0,0" VerticalAlignment="Top" Width="90" VerticalContentAlignment="Center" FontSize="14"/>
+        <Label x:Name="labelSalesTax" Content="Sales Tax (%)" HorizontalAlignment="Left" Height="30" Margin="545,168,0,0" VerticalAlignment="Top" Width="90" VerticalContentAlignment="Center" FontSize="14" Foreground="White"/>
+        <Label x:Name="labelSalesTaxValue" Content="8.00" HorizontalAlignment="Left" Height="30" Margin="746,168,0,0" VerticalAlignment="Top" Width="73" VerticalContentAlignment="Center" FontSize="14" Foreground="White"/>
+        <Label x:Name="labelTotal" Content="Total" HorizontalAlignment="Left" Height="30" Margin="545,193,0,0" VerticalAlignment="Top" Width="90" VerticalContentAlignment="Center" FontSize="14" Foreground="White"/>
+        <Label x:Name="labelTotalValue" Content="$0.00" HorizontalAlignment="Left" Height="30" Margin="739,193,0,0" VerticalAlignment="Top" Width="77" VerticalContentAlignment="Center" FontSize="14" Foreground="White"/>
+        <Label x:Name="labelSubTotal_Copy" Content="Sub Total" HorizontalAlignment="Left" Height="30" Margin="545,143,0,0" VerticalAlignment="Top" Width="90" VerticalContentAlignment="Center" FontSize="14" Foreground="White"/>
+        <Label x:Name="labelSubTotalValue" Content="$0.00" HorizontalAlignment="Left" Height="30" Margin="739,143,0,0" VerticalAlignment="Top" Width="77" VerticalContentAlignment="Center" FontSize="14" Foreground="White"/>
+        <ComboBox x:Name="comboBoxPizzaSize" HorizontalAlignment="Left" Height="40" Margin="260,78,0,0" VerticalAlignment="Top" Width="225" VerticalContentAlignment="Center" FontSize="20" FontFamily="Segoe UI Black" SelectedIndex="-1" IsEnabled="False" SelectionChanged="ComboBoxPizzaSize_SelectionChanged" SelectedValuePath="Content">
+            <ComboBoxItem Content="Small (12 inch)"/>
+            <ComboBoxItem Content="Medium (14 inch)"/>
+            <ComboBoxItem Content="Large (16 inch)"/>
+        </ComboBox>
+        <Label Content="Choose Size:" HorizontalAlignment="Left" Height="45" Margin="10,73,0,0" VerticalAlignment="Top" Width="230" FontFamily="Segoe UI Black" Foreground="White" FontSize="24"/>
+        <Button Content="Reset/New Order" HorizontalAlignment="Left" Height="60" Margin="535,361,0,0" VerticalAlignment="Top" Width="290" FontSize="20" Click="ResetButton_Click" BorderBrush="White" Foreground="White" Style="{DynamicResource ResetButtonTemplateCopy}" Background="#FFFA3D3D" />
+        <Label x:Name="labelOrderNum" Content="Order #:" HorizontalAlignment="Left" Height="35" Margin="550,230,0,0" VerticalAlignment="Top" Width="75" FontSize="14" Foreground="White"/>
+        <Label x:Name="labelOrderNumValue" Content="000" HorizontalAlignment="Left" Height="35" Margin="615,225,0,0" VerticalAlignment="Top" Width="150" FontSize="20" FontFamily="Segoe UI Black" Visibility="Hidden" Foreground="White"/>
+
+    </Grid>
+</UserControl>
