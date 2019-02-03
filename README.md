@@ -8,7 +8,7 @@ All occurrences of connectionString in the source code files (.cs files) must be
 
 Otherwise, you will get authentication errors when trying to log in, etc.
 
-I will soon provide an update with the database and table design diagrams to show the how this application interacts to the corresponding
+I will soon provide an update with the database and table design diagrams to show the how this application interacts with the corresponding
 data using Microsoft SQL Server.
 
 I plan on updating or adding functionality to this project in the future. 
