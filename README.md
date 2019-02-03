@@ -1,5 +1,5 @@
 # Tams-Pizzera-Employee-Service-System
-C# WPF/XAML Application. This side-project was developed with the intention of creating an employee portal for a restaurant business. The employee uses such an application like this one to create customer orders at work. Data is processed and retrieved using Microsoft SQL Server. This particular application is themed around a fictional pizza restaurant called Tams Pizzeria. There is a Tams' Pizzeria website developed in ASP.NET (will upload in the future) that complements this application allowing users to order online.
+C# WPF/XAML Application. This side-project was developed with the intention of creating an employee portal for a restaurant business. The employee uses such an application like this one to create customer orders at work. Data is stored using Microsoft SQL Server. Connections are established to insert and pull this data from the database and its tables. This particular application is themed around a fictional pizza restaurant called Tams Pizzeria. There is a Tams' Pizzeria website developed in ASP.NET (will upload in the future) that complements this application allowing users to order online.
 
 ****REQUIRED INFORMATION****
 
