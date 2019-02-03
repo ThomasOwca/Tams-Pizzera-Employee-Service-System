@@ -12,7 +12,7 @@ I will soon provide an update with the database and table design diagrams to sho
 data using Microsoft SQL Server.
 
 I plan on updating or adding functionality to this project in the future. 
-One idea is to create a backup database such as a Micrsoft Access .mdb in case server connections with SQL Server fail during run-time.
+One idea is to create a backup database such as a Microsoft Access .mdb in case server connections with SQL Server fail during run-time.
 
 Thanks for looking,
 
